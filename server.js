@@ -10,25 +10,23 @@ mongoose.Promise = global.Promise;
 // config.js is where we control constants for entire
 // app like PORT and DATABASE_URL
 const { PORT, DATABASE_URL } = require('./config');
-const { Restaurant } = require('./models');
+const { RecipeBox } = require('./models');
 
 const app = express();
 app.use(express.json());
 
 // GET requests to /restaurants => return 10 restaurants
-app.get('/restaurants', (req, res) => {
-  Restaurant
+app.get('/recipebox', (req, res) => {
+  RecipeBox
     .find()
-    // we're limiting because restaurants db has > 25,000
-    // documents, and that's too much to process/return
     .limit(10)
-    // success callback: for each restaurant we got back, we'll
+    // success callback: for each recipe we got back, we'll
     // call the `.serialize` instance method we've created in
     // models.js in order to only expose the data we want the API return.    
-    .then(restaurants => {
+    .then(recipes => {
       res.json({
-        restaurants: restaurants.map(
-          (restaurant) => restaurant.serialize())
+        recipes: recipes.map(
+          (recipe) => recipe.serialize())
       });
     })
     .catch(err => {
@@ -38,12 +36,12 @@ app.get('/restaurants', (req, res) => {
 });
 
 // can also request by ID
-app.get('/restaurants/:id', (req, res) => {
-  Restaurant
+app.get('/recipebox/:id', (req, res) => {
+  RecipeBox
     // this is a convenience method Mongoose provides for searching
     // by the object _id property
     .findById(req.params.id)
-    .then(restaurant => res.json(restaurant.serialize()))
+    .then(recipe => res.json(recipe.serialize()))
     .catch(err => {
       console.error(err);
       res.status(500).json({ message: 'Internal server error' });
@@ -51,9 +49,9 @@ app.get('/restaurants/:id', (req, res) => {
 });
 
 
-app.post('/restaurants', (req, res) => {
+app.post('/recipebox', (req, res) => {
 
-  const requiredFields = ['name', 'borough', 'cuisine'];
+  const requiredFields = ['title', 'ingredients', 'steps', 'description'];
   for (let i = 0; i < requiredFields.length; i++) {
     const field = requiredFields[i];
     if (!(field in req.body)) {
@@ -63,15 +61,15 @@ app.post('/restaurants', (req, res) => {
     }
   }
 
-  Restaurant
+  RecipeBox
     .create({
-      name: req.body.name,
-      borough: req.body.borough,
-      cuisine: req.body.cuisine,
-      grades: req.body.grades,
-      address: req.body.address
+      title: req.body.title,
+      ingredients: req.body.ingredients,
+      steps: req.body.steps,
+      description: req.body.description,
+      //address: req.body.address
     })
-    .then(restaurant => res.status(201).json(restaurant.serialize()))
+    .then(recipe => res.status(201).json(recipe.serialize()))
     .catch(err => {
       console.error(err);
       res.status(500).json({ message: 'Internal server error' });
@@ -79,7 +77,7 @@ app.post('/restaurants', (req, res) => {
 });
 
 
-app.put('/restaurants/:id', (req, res) => {
+app.put('/recipebox/:id', (req, res) => {
   // ensure that the id in the request path and the one in request body match
   if (!(req.params.id && req.body.id && req.params.id === req.body.id)) {
     const message = (
@@ -93,7 +91,7 @@ app.put('/restaurants/:id', (req, res) => {
   // if the user sent over any of the updatableFields, we udpate those values
   // in document
   const toUpdate = {};
-  const updateableFields = ['name', 'borough', 'cuisine', 'address'];
+  const updateableFields = ['title', 'ingredients', 'steps', 'description'];;
 
   updateableFields.forEach(field => {
     if (field in req.body) {
@@ -101,17 +99,17 @@ app.put('/restaurants/:id', (req, res) => {
     }
   });
 
-  Restaurant
+  RecipeBox
     // all key/value pairs in toUpdate will be updated -- that's what `$set` does
     .findByIdAndUpdate(req.params.id, { $set: toUpdate })
     .then(restaurant => res.status(204).end())
     .catch(err => res.status(500).json({ message: 'Internal server error' }));
 });
 
-app.delete('/restaurants/:id', (req, res) => {
-  Restaurant
+app.delete('/recipebox/:id', (req, res) => {
+  RecipeBox
     .findByIdAndRemove(req.params.id)
-    .then(restaurant => res.status(204).end())
+    .then(recipe => res.status(204).end())
     .catch(err => res.status(500).json({ message: 'Internal server error' }));
 });
 
