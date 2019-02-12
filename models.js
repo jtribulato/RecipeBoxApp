@@ -46,6 +46,6 @@ RecipeBoxSchema.methods.serialize = function() {
 
 // note that all instance methods and virtual properties on our
 // schema must be defined *before* we make the call to `.model`.
-const RecipeBox = mongoose.model('RecipeBox', RecipeBoxSchema);
+const RecipeBox = mongoose.model('Recipe', RecipeBoxSchema);
 
 module.exports = {RecipeBox};
