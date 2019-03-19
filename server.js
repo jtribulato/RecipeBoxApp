@@ -14,7 +14,7 @@ const { RecipeBox } = require('./models');
 
 const app = express();
 app.use(express.json());
-
+app.use(express.static("public"));
 // GET requests to /restaurants => return 10 restaurants
 app.get('/recipebox', (req, res) => {
   RecipeBox
@@ -165,4 +165,4 @@ if (require.main === module) {
   runServer(DATABASE_URL).catch(err => console.error(err));
 }
 
-module.exports = { app, runServer, closeServer };
+module.exports = { app, runServer, closeServer }; 

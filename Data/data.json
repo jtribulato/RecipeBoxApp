@@ -1,21 +1,4 @@
-{
-    "title": "Ribeye Steak Dinner",
-    "description": "sldjkflj lakjsfd lklj fsdljljlf slk",
-    "steps": "cook it on a hot cast iron pan",
-    "ingredients": ["steak","1 onion","salt","pepper","butter"]
-}{
-    "title": "Roasted Chicken",
-    "description": "sldjkflj lakjsfd lklj fsdljljlf slk",
-    "steps": "cook it on a hot cast iron pan",
-    "ingredients": ["steak","1 onion","salt","pepper","butter"]
-}{
-    "title": "Grilled Cheese",
-    "description": "sldjkflj lakjsfd lklj fsdljljlf slk",
-    "steps": "cook it on a hot cast iron pan",
-    "ingredients": ["steak","1 onion","salt","pepper","butter"]
-}{
-    "title": "Baked Potato",
-    "description": "sldjkflj lakjsfd lklj fsdljljlf slk",
-    "steps": "cook it on a hot cast iron pan",
-    "ingredients": ["steak","1 onion","salt","pepper","butter"]
-}
+{"title": "Ribeye Steak Dinner","description": "sldjkflj lakjsfd lklj fsdljljlf slk","steps": ["cook it on a hot cast iron pan","burn it","cool it down","Eat it"],"ingredients": ["steak","1 onion","salt","pepper","butter"]}
+{"title": "Roasted Chicken","description": "sldjkflj lakjsfd lklj fsdljljlf slk","steps": ["cook it on a hot cast iron pan","burn it","cool it down","Eat it"],"ingredients": ["steak","1 onion","salt","pepper","butter"]}
+{"title": "Grilled Cheese","description": "sldjkflj lakjsfd lklj fsdljljlf slk","steps": ["cook it on a hot cast iron pan","burn it","cool it down","Eat it"],"ingredients": ["steak","1 onion","salt","pepper","butter"]}
+{"title": "Baked Potato","description": "sldjkflj lakjsfd lklj fsdljljlf slk","steps": ["cook it on a hot cast iron pan","burn it","cool it down","Eat it"],"ingredients": ["steak","1 onion","salt","pepper","butter"]}

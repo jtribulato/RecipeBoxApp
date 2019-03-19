@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome to The Blog</title>
+    <meta name="description" content="The Recipe Box">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="title">
+            <h1 class="mainTitle">
+                THE<br> 
+                RECIPE<br>
+                BOX<br>
+            </h1>
+        </header>
+        <main>
+
+            
+            <section class="introduction">
+                <p>Welcome to your recipe box. This is a place where you can add you recipes and keep them handy for the next time you want to make a recipe. You can also take these recipes and organize them by cuisine and  easily share them with your friends.  </p>
+                <p>Start by registering your own account.Then login and start adding your recipes. It’s that easy. </p>
+                <p> </p>
+            </section>             
+  
+            <div class="register">
+                <form action="/register" method="post" id="js-post-form" >
+                    <button type="submit">Register New Account</button>
+                </form>
+            </div>
+            <div class="login">
+                <form action="/login" method="post" id="js-post-form">
+                    <button type="submit">Login</button>
+                </form>
+            </div>    
+                <!-- <ul class="blogListings js-blog-list">
+                </ul> -->
+            
+        </main>
+    </div>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="/client.js"></script>
+</body>
+</html>

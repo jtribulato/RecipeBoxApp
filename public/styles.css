@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Montserrat:500', sans-serif;
+    /* background-image: url("images/backgrounds/cutlery-on-vintage-wooden-background-preview-.jpg"); */
+    background-image: url("images/backgrounds/landing-background-375x812.jpg")
+
+  }  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .mainTitle {
+      font-size: 40px;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px #000000; 
+  }
+  .title {
+    margin: 175px 0 0 75px;
+  }
+  .introduction {
+    background: #ffffff;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Montserrat:500', sans-serif; 
+    max-width: 500px;
+  }
+  .introduction p{
+   padding: 15px 15px 0px;
+  }
+
+  button {
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: aquamarine;
+    font-weight: 500;
+    margin: 10px 0 25px 45px;
+    box-shadow: 2px 2px 4px #000000; 
+    font-size: 20px;
+  }
+    button:hover {
+    cursor: pointer;
+  }
+
+
